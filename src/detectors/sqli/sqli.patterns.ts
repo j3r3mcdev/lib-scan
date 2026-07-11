@@ -1,0 +1,15 @@
+export const SQLI_PATTERNS: RegExp[] = [
+  /(\bor\b|\band\b)\s+\d+=\d+/i,
+  /['"]\s*or\s*['"]?\d+['"]?\s*=\s*['"]?\d+/i,
+  /--\s*$/i,
+  /#\s*$/i,
+  /\/\*/i,
+  /\bunion\b\s+\bselect\b/i,
+  /\bselect\b.+\bfrom\b/i,
+  /\bdrop\b\s+\btable\b/i,
+  /\binsert\b\s+\binto\b/i,
+  /\bupdate\b\s+\bset\b/i,
+  /\bdelete\b\s+\bfrom\b/i,
+  /\bbenchmark\b\s*\(/i,
+  /\bsleep\b\s*\(/i,
+];
