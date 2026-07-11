@@ -43,7 +43,7 @@ export interface ScanFinding {
   vulnerability: Vulnerability;
   severity: Severity;
   score: number;
-  evidence: NormalizedEvent[];
+  evidence: ScanEvidence[];
   details?: string;
 }
 
@@ -77,4 +77,9 @@ export interface ScanResult {
   chains: CorrelationChain[];
   timestamp: number;
   metadata?: Record<string, any>;
+}
+
+export interface ScanEvidence {
+  pattern: string;
+  payload: string;
 }
