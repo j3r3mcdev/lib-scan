@@ -12,6 +12,9 @@ jobs:
   sanity:
     runs-on: ubuntu-latest
 
+    env:
+      HUSKY: 0
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -20,10 +23,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          registry-url: https://registry.npmjs.org/
 
       - name: Install dependencies
         run: npm ci
 
       - name: Run sanity check
-        run: node sanity.js full
+        run: npm run sanity
