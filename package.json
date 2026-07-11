@@ -10,8 +10,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && tsc -p tsconfig.json",
-    "test": "vitest",
-    "test:ci": "vitest run --coverage",
+    "test": " npx vitest --coverage",
+    "test:ci": " npx vitest --coverage",
     "sanity": "node sanity.js full",
     "sanity:lite": "node sanity.js lite",
     "prepare": "husky"
