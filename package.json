@@ -1,0 +1,25 @@
+{
+  "name": "@j3r3mcdev/lib-scan",
+  "version": "1.0.0",
+  "description": "librairie scanner",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "npm run clean && tsc -p tsconfig.json",
+    "test": "vitest",
+    "test:ci": "vitest run --coverage",
+    "sanity": "node sanity.js full",
+    "sanity:lite": "node sanity.js lite",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "Jérémy",
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
+  }
+}
