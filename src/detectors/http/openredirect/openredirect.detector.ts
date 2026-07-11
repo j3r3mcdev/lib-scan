@@ -32,7 +32,7 @@ export class OpenRedirectDetector implements ScanDetector {
           if (pattern.test(payload)) {
             findings.push({
               id: `openredirect-${Date.now()}`,
-              vulnerability: "open_redirect" as any,
+              vulnerability: "open_redirect",
               severity: "medium",
               score: 25,
               evidence: [
