@@ -53,7 +53,7 @@ try {
 
 // EXTRACT COVERAGE SUMMARY (Vitest)
 let coverageTable = "";
-const summaryStart = vitestOutput.indexOf("Coverage report");
+const summaryStart = vitestOutput.indexOf("Coverage report generated");
 
 if (summaryStart !== -1) {
   const afterSummary = vitestOutput.substring(summaryStart);
