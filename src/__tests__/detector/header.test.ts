@@ -84,4 +84,20 @@ describe("HeaderDetector", () => {
 
     expect(findings).toHaveLength(0);
   });
+
+  test("returns empty array when headers are missing", () => {
+    const ctx = new ScanContextImpl();
+
+    ctx.addEvent({
+      id: "e1",
+      source: "http",
+      timestamp: Date.now(),
+      metadata: {}, // ✔ headers absent
+    });
+
+    const det = new HeaderDetector();
+    const findings = det.execute(ctx);
+
+    expect(findings).toHaveLength(0);
+  });
 });

@@ -24,7 +24,7 @@ export class HeaderDetector implements ScanDetector {
         if (pattern.test(payload)) {
           findings.push({
             id: `header-${Date.now()}`,
-            vulnerability: "http",
+            vulnerability: "header_injection",
             severity: "medium",
             score: 30,
             evidence: [

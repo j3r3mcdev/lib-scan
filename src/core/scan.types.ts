@@ -4,15 +4,27 @@
  */
 
 export type Vulnerability =
-  | "ssrf"
   | "xss"
   | "sqli"
-  | "dns"
-  | "http"
-  | "waf"
-  | "rce"
+  | "path_traversal"
   | "lfi"
-  | "path_traversal";
+  | "header_injection"
+  | "command_injection"
+  | "crlf"
+  | "nosql"
+  | "ssti"
+  | "xxe"
+  | "prototype_pollution"
+  | "rfi"
+  | "ua"
+  | "mime"
+  | "upload"
+  | "anomaly"
+  | "rate_limit"
+  | "ip"
+  | "dns"
+  | "portscan"
+  | "open_redirect"; // ✔ FIX
 
 export type Severity = "low" | "medium" | "high" | "critical";
 
