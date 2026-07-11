@@ -51,25 +51,49 @@ try {
   failed = true;
 }
 
-// EXTRACT COVERAGE SUMMARY (Vitest)
+// EXTRACT COVERAGE SUMMARY FROM LCOV
 let coverageTable = "";
-const summaryStart = vitestOutput.indexOf("Coverage report generated");
+const lcovFile = "coverage/lcov.info";
 
-if (summaryStart !== -1) {
-  const afterSummary = vitestOutput.substring(summaryStart);
+if (fs.existsSync(lcovFile)) {
+  const lcov = fs.readFileSync(lcovFile, "utf8");
 
-  const endIndex = afterSummary.indexOf("----------");
-  const rawTable =
-    endIndex !== -1
-      ? afterSummary.substring(0, endIndex + "----------".length)
-      : afterSummary;
+  let totalLines = 0;
+  let coveredLines = 0;
 
-  coverageTable = rawTable
-    .split("\n")
-    .filter((line) => !line.includes("Coverage report"))
-    .filter((line) => line.trim().length > 0)
-    .join("\n")
-    .trim();
+  let totalBranches = 0;
+  let coveredBranches = 0;
+
+  let totalFuncs = 0;
+  let coveredFuncs = 0;
+
+  const lines = lcov.split("\n");
+
+  for (const line of lines) {
+    if (line.startsWith("LF:")) totalLines += parseInt(line.substring(3));
+    if (line.startsWith("LH:")) coveredLines += parseInt(line.substring(3));
+
+    if (line.startsWith("BRF:")) totalBranches += parseInt(line.substring(4));
+    if (line.startsWith("BRH:")) coveredBranches += parseInt(line.substring(4));
+
+    if (line.startsWith("FNF:")) totalFuncs += parseInt(line.substring(4));
+    if (line.startsWith("FNH:")) coveredFuncs += parseInt(line.substring(4));
+  }
+
+  const pct = (covered, total) =>
+    total === 0 ? 100 : Math.round((covered / total) * 100);
+
+  const pctLines = pct(coveredLines, totalLines);
+  const pctBranches = pct(coveredBranches, totalBranches);
+  const pctFuncs = pct(coveredFuncs, totalFuncs);
+  const pctStmts = pctLines; // Vitest = lines = statements
+
+  coverageTable = `
+Statements : ${pctStmts}%
+Branches   : ${pctBranches}%
+Functions  : ${pctFuncs}%
+Lines      : ${pctLines}%
+`.trim();
 } else {
   coverageTable = "⚠ Coverage summary not found";
 }
