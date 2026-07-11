@@ -1,11 +1,20 @@
-export class ScanInstance {
-  constructor(private readonly name: string) {}
+import { ScanRegistry } from "./scan.registry";
+import { ScanPipeline } from "./scan.pipeline";
+import { ScanContextImpl } from "./scan.context";
 
-  getName(): string {
+export class ScanInstance {
+  constructor(
+    private readonly name: string,
+    private readonly registry: ScanRegistry,
+  ) {}
+
+  getName() {
     return this.name;
   }
 
-  isReady(): boolean {
-    return true;
+  run() {
+    const context = new ScanContextImpl();
+    const pipeline = new ScanPipeline(this.registry.listDetectors());
+    return pipeline.run(context);
   }
 }

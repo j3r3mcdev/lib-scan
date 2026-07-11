@@ -1,14 +1,30 @@
 import { describe, test, expect } from "vitest";
-import { ScanInstance } from "../../core/scan.instance";
+import { ScanInstance } from "../../../src/core/scan.instance";
+import { ScanRegistry } from "../../../src/core/scan.registry";
 
 describe("ScanInstance", () => {
-  test("returns its name", () => {
-    const scan = new ScanInstance("lib-scan");
-    expect(scan.getName()).toBe("lib-scan");
-  });
+  test("runs pipeline and returns result", () => {
+    const registry = new ScanRegistry();
 
-  test("is always ready", () => {
-    const scan = new ScanInstance("test");
-    expect(scan.isReady()).toBe(true);
+    registry.registerDetector({
+      id: "d1",
+      name: "Detector",
+      applies: () => true,
+      execute: () => [
+        {
+          id: "f1",
+          vulnerability: "xss",
+          severity: "medium",
+          score: 30,
+          evidence: [],
+        },
+      ],
+    });
+
+    const scan = new ScanInstance("test", registry);
+    const result = scan.run();
+
+    expect(result.score).toBe(30);
+    expect(result.severity).toBe("medium");
   });
 });
