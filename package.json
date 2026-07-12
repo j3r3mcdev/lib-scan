@@ -1,58 +1,32 @@
 {
   "name": "@j3r3mcdev/lib-scan",
   "version": "1.0.0",
-  "description": "Librairie de détection de vulnérabilités pour pipelines de sécurité distribués",
-  "type": "module",
+  "description": "librairie scanner",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "files": [
     "dist"
   ],
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && tsc -p tsconfig.json",
-    "test": "vitest --coverage",
-    "test:ci": "vitest --coverage",
+    "test": " npx vitest --coverage",
+    "test:ci": "npx vitest --coverage",
     "sanity": "node sanity.js full",
     "sanity:lite": "node sanity.js lite",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
-  "keywords": [
-    "security",
-    "scanner",
-    "vulnerability",
-    "detection",
-    "lib-scan"
-  ],
+  "keywords": [],
   "author": "Jérémy",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/j3r3mcdev/lib-scan.git"
-  },
-  "bugs": {
-    "url": "https://github.com/j3r3mcdev/lib-scan/issues"
-  },
-  "homepage": "https://github.com/j3r3mcdev/lib-scan#readme",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com/"
-  },
-  "sideEffects": false,
-  "engines": {
-    "node": ">=18"
   },
   "devDependencies": {
     "@types/node": "^26.1.1",
     "@vitest/coverage-v8": "^4.1.10",
     "husky": "^9.1.7",
     "typescript": "^7.0.2",
-    "vitest": "^4.1.10",
-    "rimraf": "^5.0.5"
+    "vitest": "^4.1.10"
   }
 }
