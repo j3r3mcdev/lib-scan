@@ -2,15 +2,8 @@
   "name": "@j3r3mcdev/lib-scan",
   "version": "1.0.0",
   "description": "Librairie de détection de vulnérabilités pour pipelines de sécurité distribués",
-  "type": "module",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
-    }
-  },
   "files": [
     "dist"
   ],
