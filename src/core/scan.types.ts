@@ -4,15 +4,28 @@
  */
 
 export type Vulnerability =
-  | "ssrf"
   | "xss"
   | "sqli"
-  | "dns"
-  | "http"
-  | "waf"
-  | "rce"
+  | "path_traversal"
   | "lfi"
-  | "path_traversal";
+  | "header_injection"
+  | "command_injection"
+  | "crlf"
+  | "nosql"
+  | "ssti"
+  | "xxe"
+  | "prototype_pollution"
+  | "rfi"
+  | "ua"
+  | "mime"
+  | "upload"
+  | "anomaly"
+  | "rate_limit"
+  | "ip"
+  | "dns"
+  | "portscan"
+  | "open_redirect" // ✔ FIX
+  | "jwt";
 
 export type Severity = "low" | "medium" | "high" | "critical";
 
@@ -43,7 +56,7 @@ export interface ScanFinding {
   vulnerability: Vulnerability;
   severity: Severity;
   score: number;
-  evidence: NormalizedEvent[];
+  evidence: ScanEvidence[];
   details?: string;
 }
 
@@ -77,4 +90,9 @@ export interface ScanResult {
   chains: CorrelationChain[];
   timestamp: number;
   metadata?: Record<string, any>;
+}
+
+export interface ScanEvidence {
+  pattern: string;
+  payload: string;
 }

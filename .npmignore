@@ -1,0 +1,17 @@
+# Ne publier que dist/
+src/
+tests/
+coverage/
+node_modules/
+.vscode/
+.git/
+.gitignore
+npm-debug.log
+vitest.config.*
+tsconfig.json
+tsconfig.*.json
+sanity.js
+*.spec.ts
+*.test.ts
+*.md
+husky/

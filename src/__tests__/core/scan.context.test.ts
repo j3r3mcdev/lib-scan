@@ -1,8 +1,17 @@
 import { describe, test, expect } from "vitest";
 import { ScanContextImpl } from "../../../src/core/scan.context";
 
-describe("ScanContextImpl", () => {
-  test("adds events", () => {
+describe("ScanContextImpl full coverage", () => {
+  test("initializes empty arrays and metadata", () => {
+    const ctx = new ScanContextImpl();
+
+    expect(ctx.events).toEqual([]);
+    expect(ctx.findings).toEqual([]);
+    expect(ctx.chains).toEqual([]);
+    expect(ctx.metadata).toEqual({});
+  });
+
+  test("addEvent pushes an event", () => {
     const ctx = new ScanContextImpl();
 
     ctx.addEvent({
@@ -12,10 +21,11 @@ describe("ScanContextImpl", () => {
       metadata: {},
     });
 
-    expect(ctx.events).toHaveLength(1);
+    expect(ctx.events.length).toBe(1);
+    expect(ctx.events[0].id).toBe("e1");
   });
 
-  test("adds findings", () => {
+  test("addFinding pushes a finding", () => {
     const ctx = new ScanContextImpl();
 
     ctx.addFinding({
@@ -26,13 +36,23 @@ describe("ScanContextImpl", () => {
       evidence: [],
     });
 
-    expect(ctx.findings).toHaveLength(1);
+    expect(ctx.findings.length).toBe(1);
+    expect(ctx.findings[0].id).toBe("f1");
   });
 
-  test("sets metadata", () => {
+  test("setMetadata sets a new key", () => {
     const ctx = new ScanContextImpl();
 
     ctx.setMetadata("ua", "Mozilla");
     expect(ctx.metadata.ua).toBe("Mozilla");
+  });
+
+  test("setMetadata overwrites an existing key", () => {
+    const ctx = new ScanContextImpl();
+
+    ctx.setMetadata("ua", "Mozilla");
+    ctx.setMetadata("ua", "Chrome");
+
+    expect(ctx.metadata.ua).toBe("Chrome");
   });
 });
