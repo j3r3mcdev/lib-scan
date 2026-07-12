@@ -1,7 +1,7 @@
 import { describe, test, expect } from "vitest";
-import { RFIDetector } from "../../../../../src/detectors/http/rfi/rfi.detector";
-import { RFI_PATTERNS } from "../../../../../src/detectors/http/rfi/rfi.patterns";
-import { ScanContextImpl } from "../../../../../src/core/scan.context";
+import { RFIDetector } from "../../../detectors/http/rfi/rfi.detector";
+import { RFI_PATTERNS } from "../../../detectors/http/rfi/rfi.patterns";
+import { ScanContextImpl } from "../../../core/scan.context";
 
 describe("RFIDetector", () => {
   test("patterns file exports an array of regex", () => {
