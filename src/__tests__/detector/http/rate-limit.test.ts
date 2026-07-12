@@ -134,4 +134,13 @@ describe("RateLimitDetector", () => {
 
     expect(findings).toHaveLength(0);
   });
+
+  test("execute() returns empty array when no http events exist", () => {
+    const ctx = new ScanContextImpl(); // aucun event
+
+    const det = new RateLimitDetector();
+    const findings = det.execute(ctx);
+
+    expect(findings).toHaveLength(0);
+  });
 });
