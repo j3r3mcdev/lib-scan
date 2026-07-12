@@ -24,7 +24,8 @@ export type Vulnerability =
   | "ip"
   | "dns"
   | "portscan"
-  | "open_redirect"; // ✔ FIX
+  | "open_redirect" // ✔ FIX
+  | "jwt";
 
 export type Severity = "low" | "medium" | "high" | "critical";
 
