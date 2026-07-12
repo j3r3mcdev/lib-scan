@@ -10,8 +10,8 @@
   "scripts": {
     "clean": "rimraf dist",
     "build": "npm run clean && tsc -p tsconfig.json",
-    "test": "vitest --coverage",
-    "test:ci": "vitest --coverage",
+    "test": "vitest --run",
+    "test:ci": "vitest --run",
     "sanity": "node sanity.js full",
     "sanity:lite": "node sanity.js lite",
     "prepare": "husky install"
@@ -45,7 +45,6 @@
     "husky": "^9.1.7",
     "rimraf": "^5.0.5",
     "typescript": "5.4.5",
-    "vitest": "1.6.0",
-    "@vitest/coverage-c8": "1.6.0"
+    "vitest": "1.6.0"
   }
 }
