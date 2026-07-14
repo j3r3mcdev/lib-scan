@@ -95,3 +95,9 @@ export * from "./detectors/sqli/sqli.patterns";
 /* ----------------------------- XSS ----------------------------- */
 export * from "./detectors/xss/xss.detector";
 export * from "./detectors/xss/xss.patterns";
+
+/* ----------------------------- Instances & Pipeline ----------------------------- */
+export * from "./core/scan.instance";
+export * from "./core/scan.pipeline";
+export * from "./core/scan.registry";
+export * from "./core/scan.context";
