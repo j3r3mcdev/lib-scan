@@ -1,9 +1,9 @@
-import { XXE_PATTERNS } from "./xxe.patterns";
+import { XXE_PATTERNS } from "./xxe.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class XXEDetector implements ScanDetector {
   readonly id = "xxe-detector";
