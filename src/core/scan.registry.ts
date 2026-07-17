@@ -1,5 +1,5 @@
-import { ScanDetector } from "./scan.types";
-import { ScanError } from "./scan.error";
+import { ScanDetector } from "./scan.types.js";
+import { ScanError } from "./scan.error.js";
 
 export class ScanRegistry {
   private readonly detectors = new Map<string, ScanDetector>();

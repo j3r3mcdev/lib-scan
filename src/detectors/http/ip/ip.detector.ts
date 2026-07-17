@@ -1,9 +1,9 @@
-import { IP_PATTERNS } from "./ip.patterns";
+import { IP_PATTERNS } from "./ip.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class IPDetector implements ScanDetector {
   readonly id = "ip-detector";

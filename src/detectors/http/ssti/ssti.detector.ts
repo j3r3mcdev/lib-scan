@@ -1,9 +1,9 @@
-import { SSTI_PATTERNS } from "./ssti.patterns";
+import { SSTI_PATTERNS } from "./ssti.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class SSTIDetector implements ScanDetector {
   readonly id = "ssti-detector";

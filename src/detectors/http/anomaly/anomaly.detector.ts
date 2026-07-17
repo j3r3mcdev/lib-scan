@@ -1,9 +1,9 @@
-import { ANOMALY_PATTERNS } from "./anomaly.patterns";
+import { ANOMALY_PATTERNS } from "./anomaly.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class AnomalyDetector implements ScanDetector {
   readonly id = "anomaly-detector";

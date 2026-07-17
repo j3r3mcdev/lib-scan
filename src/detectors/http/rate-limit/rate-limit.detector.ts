@@ -1,9 +1,9 @@
-import { RATELIMIT_PATTERNS } from "./rate-limit.patterns";
+import { RATELIMIT_PATTERNS } from "./rate-limit.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class RateLimitDetector implements ScanDetector {
   readonly id = "ratelimit-detector";

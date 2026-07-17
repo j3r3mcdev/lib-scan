@@ -1,5 +1,9 @@
-import { XSS_PATTERNS } from "./xss.patterns";
-import { ScanDetector, ScanContext, ScanFinding } from "../../core/scan.types";
+import { XSS_PATTERNS } from "./xss.patterns.js";
+import {
+  ScanDetector,
+  ScanContext,
+  ScanFinding,
+} from "../../core/scan.types.js";
 
 export class XSSDetector implements ScanDetector {
   readonly id = "xss-detector";

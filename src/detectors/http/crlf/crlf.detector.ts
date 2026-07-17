@@ -1,9 +1,9 @@
-import { CRLF_PATTERNS } from "./crlf.patterns";
+import { CRLF_PATTERNS } from "./crlf.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class CRLFDetector implements ScanDetector {
   readonly id = "crlf-detector";

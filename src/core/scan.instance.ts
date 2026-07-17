@@ -1,6 +1,6 @@
-import { ScanRegistry } from "./scan.registry";
-import { ScanPipeline } from "./scan.pipeline";
-import { ScanContextImpl } from "./scan.context";
+import { ScanRegistry } from "./scan.registry.js";
+import { ScanPipeline } from "./scan.pipeline.js";
+import { ScanContextImpl } from "./scan.context.js";
 
 export class ScanInstance {
   constructor(

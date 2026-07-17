@@ -1,9 +1,9 @@
-import { MIME_PATTERNS } from "./mime.patterns";
+import { MIME_PATTERNS } from "./mime.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class MIMEDetector implements ScanDetector {
   readonly id = "mime-detector";

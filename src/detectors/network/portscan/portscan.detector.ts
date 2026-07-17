@@ -1,9 +1,9 @@
-import { PORTSCAN_PATTERNS } from "./portscan.patterns";
+import { PORTSCAN_PATTERNS } from "./portscan.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class PortScanDetector implements ScanDetector {
   readonly id = "portscan-detector";

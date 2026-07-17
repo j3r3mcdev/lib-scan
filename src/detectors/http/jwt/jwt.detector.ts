@@ -1,9 +1,9 @@
-import { JWT_PATTERNS } from "./jwt.patterns";
+import { JWT_PATTERNS } from "./jwt.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class JWTDetector implements ScanDetector {
   readonly id = "jwt-detector";

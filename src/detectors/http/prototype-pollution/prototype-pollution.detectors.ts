@@ -1,9 +1,9 @@
-import { PROTOTYPE_POLLUTION_PATTERNS } from "./prototype-pollution.patterns";
+import { PROTOTYPE_POLLUTION_PATTERNS } from "./prototype-pollution.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class PrototypePollutionDetector implements ScanDetector {
   readonly id = "prototypepollution-detector";

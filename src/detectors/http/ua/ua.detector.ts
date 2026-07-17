@@ -1,9 +1,9 @@
-import { UA_PATTERNS } from "./ua.patterns";
+import { UA_PATTERNS } from "./ua.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class UADetector implements ScanDetector {
   readonly id = "ua-detector";

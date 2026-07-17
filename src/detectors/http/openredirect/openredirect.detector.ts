@@ -1,9 +1,9 @@
-import { OPEN_REDIRECT_PATTERNS } from "./openredirect.patterns";
+import { OPEN_REDIRECT_PATTERNS } from "./openredirect.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class OpenRedirectDetector implements ScanDetector {
   readonly id = "openredirect-detector";

@@ -1,5 +1,9 @@
-import { LFI_PATTERNS } from "./lfi.patterns";
-import { ScanDetector, ScanContext, ScanFinding } from "../../core/scan.types";
+import { LFI_PATTERNS } from "./lfi.patterns.js";
+import {
+  ScanDetector,
+  ScanContext,
+  ScanFinding,
+} from "../../core/scan.types.js";
 
 export class LFIDetector implements ScanDetector {
   readonly id = "lfi-detector";

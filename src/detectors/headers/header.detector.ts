@@ -1,5 +1,9 @@
-import { HEADER_PATTERNS } from "./header.patterns";
-import { ScanDetector, ScanContext, ScanFinding } from "../../core/scan.types";
+import { HEADER_PATTERNS } from "./header.patterns.js";
+import {
+  ScanDetector,
+  ScanContext,
+  ScanFinding,
+} from "../../core/scan.types.js";
 
 export class HeaderDetector implements ScanDetector {
   readonly id = "header-detector";

@@ -1,5 +1,9 @@
-import { PATH_PATTERNS } from "./path.patterns";
-import { ScanDetector, ScanContext, ScanFinding } from "../../core/scan.types";
+import { PATH_PATTERNS } from "./path.patterns.js";
+import {
+  ScanDetector,
+  ScanContext,
+  ScanFinding,
+} from "../../core/scan.types.js";
 
 export class PathTraversalDetector implements ScanDetector {
   readonly id = "path-detector";

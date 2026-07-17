@@ -1,9 +1,9 @@
-import { DNS_PATTERNS } from "./dns.patterns";
+import { DNS_PATTERNS } from "./dns.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class DNSDetector implements ScanDetector {
   readonly id = "dns-detector";

@@ -3,8 +3,8 @@ import {
   ScanDetector,
   ScanFinding,
   ScanResult,
-} from "./scan.types";
-import { ScanError } from "./scan.error";
+} from "./scan.types.js";
+import { ScanError } from "./scan.error.js";
 
 export class ScanPipeline {
   constructor(private readonly detectors: ScanDetector[]) {}

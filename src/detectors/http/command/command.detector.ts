@@ -1,9 +1,9 @@
-import { COMMAND_PATTERNS } from "./command.patterns";
+import { COMMAND_PATTERNS } from "./command.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class CommandInjectionDetector implements ScanDetector {
   readonly id = "command-detector";

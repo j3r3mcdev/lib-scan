@@ -1,4 +1,4 @@
-import { ScanContext, ScanResult, Severity } from "./scan.types";
+import { ScanContext, ScanResult, Severity } from "./scan.types.js";
 
 export class ScanResultBuilder {
   static build(context: ScanContext): ScanResult {

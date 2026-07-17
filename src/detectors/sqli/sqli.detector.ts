@@ -1,5 +1,9 @@
-import { SQLI_PATTERNS } from "./sqli.patterns";
-import { ScanDetector, ScanContext, ScanFinding } from "../../core/scan.types";
+import { SQLI_PATTERNS } from "./sqli.patterns.js";
+import {
+  ScanDetector,
+  ScanContext,
+  ScanFinding,
+} from "../../core/scan.types.js";
 
 export class SQLIDetector implements ScanDetector {
   readonly id = "sqli-detector";

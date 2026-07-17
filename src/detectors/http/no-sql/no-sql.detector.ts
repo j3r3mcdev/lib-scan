@@ -1,9 +1,9 @@
-import { NOSQL_PATTERNS } from "./no-sql.patterns";
+import { NOSQL_PATTERNS } from "./no-sql.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class NoSQLInjectionDetector implements ScanDetector {
   readonly id = "nosql-detector";

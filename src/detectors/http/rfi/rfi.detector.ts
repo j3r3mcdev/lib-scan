@@ -1,9 +1,9 @@
-import { RFI_PATTERNS } from "./rfi.patterns";
+import { RFI_PATTERNS } from "./rfi.patterns.js";
 import {
   ScanDetector,
   ScanContext,
   ScanFinding,
-} from "../../../core/scan.types";
+} from "../../../core/scan.types.js";
 
 export class RFIDetector implements ScanDetector {
   readonly id = "rfi-detector";
